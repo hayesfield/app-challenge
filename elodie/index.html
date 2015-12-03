@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Homework excuse generator!</title>
+
+
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+
+
+<h1 class="text-center">I didn't do my homework because...</h1>
+
+
+  </div>
+
+
+  <div class="well text-center"><i class="fa fa-diamond fa-2x" id="icon1"></i>
+    <p id="factLabel"> A unicorn ate my homework</p>
+    <p><i class="fa fa-diamond fa-2x" id="icon2"></i></p>
+  </div>
+
+
+
+<p class="text-center"> <button type="button" class="btn btn-info" onclick="javascript:generateNewFact();">
+  <span class="glyphicon glyphicon-education" aria-hidden="true"></span> Generate new excuse
+  </button>  </p>
+
+</body>
+
+
+  <script>
+  var excuses =[{
+    "excuse": "A unicorn ate my homework ",
+    "icon": "asterix",
+    "text_colour": "#212121"
+  },
+  {
+    "excuse": "[someone official] banned me from doing homework ",
+    "icon": "certificate",
+    "text_colour": "#607D8B"
+  },
+  {
+    "excuse": "There is a world paper shortage ",
+    "icon": "globe",
+    "text_colour": "#9E9E9E"
+  },
+  {
+    "excuse": "I am allergic to homework ",
+    "icon": "hospital-o",
+    "text_colour": "#795548"
+  },
+  {
+    "excuse": "I was on the moon!",
+    "icon": "moon-o",
+    "text_colour": "#FF5722"
+  },
+  {
+    "excuse": "It was abducted by aliens ",
+    "icon": "space-shuttle",
+    "text_colour": "#FF9800"
+  },
+  {
+    "excuse": "I accidently put it in my birthday cake",
+    "icon": "birthday-cake",
+    "text_colour": "#FFC107"
+  },
+  {
+    "excuse": "I am too fabulous ",
+    "icon": "star",
+    "text_colour": "#FFEB3B"
+  },
+  {
+    "excuse": "I do not know of this `homework` you speak of… ",
+    "icon": "eye",
+    "text_colour": "#CDDC39"
+  },
+  {
+    "excuse": "Netflix is more important… ",
+    "icon": "television",
+    "text_colour": "#8BC34A"
+  },
+  {
+    "excuse": "I was playing Flappy Homework ",
+    "icon": "mobile",
+    "text_colour": "#4CAF50"
+  },
+  {
+    "excuse": "What homework? ",
+    "icon": "question",
+    "text_colour": "#009688"
+  },
+  {
+    "excuse": "I wanted to try out the homework excuse generator! ",
+    "icon": "exclamation",
+    "text_colour": "#00BCD4"
+  },
+  {
+    "excuse": "Why should I do homework when I could have fun!? ",
+    "icon": "child",
+    "text_colour": "#03A9F4"
+  },
+  {
+    "excuse": "I now got to Hogwarts ",
+    "icon": "magic",
+    "text_colour": "#2196F3"
+  },
+  {
+    "excuse": "I was in the Hunger Games ",
+    "icon": "hourglass",
+    "text_colour": "#3F51B5"
+  },
+  {
+    "excuse": "Coding is better though… ",
+    "icon": "github",
+    "text_colour": "#673AB7"
+  },
+  {
+    "excuse": "I was programming the homework generator",
+    "icon": "html5",
+    "text_colour": "#9C27B0"
+  },
+  {
+    "excuse": "One word: YouTube ",
+    "icon": "youtube-square",
+    "text_colour": "#E91E63"
+  },
+  {
+    "excuse": "I put it in my hair for safe keeping but I went to the hairdressers and they cut it off ",
+    "icon": "scissors",
+    "text_colour": "#F44336"
+  },
+  {
+    "excuse": "I lost it ",
+    "icon": "archive",
+    "text_colour": "#C62828"
+  },
+  {
+    "excuse": "I got it dirty so I gave it a shower ",
+    "icon": "refresh",
+    "text_colour": "#AD1457"
+  },
+  {
+    "excuse": "I was testing gravity but it landed in the river ",
+    "icon": "ship",
+    "text_colour": "#6A1B9A"
+  },
+  {
+    "excuse": "I made it into a paper aeroplane and it flew off into the sunset ",
+    "icon": "paper-plane",
+    "text_colour": "#4527A0"
+  },
+  {
+    "excuse": "I wanted it to have an adventure so I put it on a bus, it never came back… ",
+    "icon": "bus",
+    "text_colour": "#283593"
+  },
+  {
+    "excuse": "Paper and water don’t go together",
+    "icon": "tint",
+    "text_colour": "#1565C0"
+  },
+  {
+    "excuse": "Me no speak English ",
+    "icon": "comment",
+    "text_colour": "#0277BD"
+  },
+  {
+    "excuse": "I used it as an emergency shoe and it was raining ",
+    "icon": "umbrella",
+    "text_colour": "#00838F"
+  },
+  {
+    "excuse": "I wrote it on invisible paper in invisible ink ",
+    "icon": "pencil",
+    "text_colour": "#00695C"
+  },
+  {
+    "excuse": "I’m and environmentalist, I refuse to use paper because  paper destroys trees ",
+    "icon": "book",
+    "text_colour": "#2E7D32"
+  },
+  {
+    "excuse": "I couldn’t bring the tree to school",
+    "icon": "tree",
+    "text_colour": "#558B2F"
+  },
+  {
+    "excuse": "This is your dream, my nightmare ",
+    "icon": "comments-o",
+    "text_colour": "#9E9D24"
+  },
+  {
+    "excuse": "I gave it to a pigeon to bring it here ",
+    "icon": "twitter",
+    "text_colour": "#F9A825"
+  },
+  {
+    "excuse": "I sent it to you telepathically ",
+    "icon": "bars",
+    "text_colour": "#FF8F00"
+  },
+  {
+    "excuse": "My dog was hungry so I gave it tea... ",
+    "icon": "male",
+    "text_colour": "#EF6C00"
+  },
+  {
+    "excuse": "I used it to buy dinner ",
+    "icon": "circle-thin",
+    "text_colour": "#D84315"
+  },
+  {
+    "excuse": "I couldn’t find any toilet roll… ",
+    "icon": "frown-o",
+    "text_colour": "#4E342E"
+  },
+  {
+    "excuse": "Superman had to save me from extreme bordom so he destroyed it ",
+    "icon": "bomb",
+    "text_colour": "#424242"
+  },
+  {
+    "excuse": "My cat threw up on it. ",
+    "icon": "spinner",
+    "text_colour": "#37474F"
+  },
+  {
+    "excuse": "My mum put in the washing machine by accident. ",
+    "icon": "thumbs-down",
+    "text_colour": "#000000"
+  }];
+
+
+
+  var iconLabel1 = $("#icon1");
+
+  var iconLabel2 = $("#icon2");
+
+  var factLabel = $("#factLabel");
+
+
+
+  function generateNewFact(){
+
+    var i = Math.floor(Math.random() * excuses.length) ;
+
+    var excuse = excuses[i];
+
+    factLabel.text(excuse.excuse);
+
+  iconLabel1.attr("class", "fa fa-"+excuse.icon + " fa-5x");
+
+  iconLabel2.attr("class", "fa fa-"+excuse.icon + " fa-5x");
+
+  }
+
+  generateNewFact();
+
+
+
+
+  </script>
+</html>
